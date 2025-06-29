@@ -1,0 +1,15 @@
+/home/mani/Mani/Tri-Net/TriNet.TestApp/bin/Debug/net8.0/TriNet.TestApp
+/home/mani/Mani/Tri-Net/TriNet.TestApp/bin/Debug/net8.0/TriNet.TestApp.deps.json
+/home/mani/Mani/Tri-Net/TriNet.TestApp/bin/Debug/net8.0/TriNet.TestApp.runtimeconfig.json
+/home/mani/Mani/Tri-Net/TriNet.TestApp/bin/Debug/net8.0/TriNet.TestApp.dll
+/home/mani/Mani/Tri-Net/TriNet.TestApp/bin/Debug/net8.0/TriNet.TestApp.pdb
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/TriNet.TestApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/TriNet.TestApp.AssemblyInfoInputs.cache
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/TriNet.TestApp.AssemblyInfo.cs
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/TriNet.TestApp.csproj.CoreCompileInputs.cache
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/TriNet.TestApp.sourcelink.json
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/TriNet.TestApp.dll
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/refint/TriNet.TestApp.dll
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/TriNet.TestApp.pdb
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/TriNet.TestApp.genruntimeconfig.cache
+/home/mani/Mani/Tri-Net/TriNet.TestApp/obj/Debug/net8.0/ref/TriNet.TestApp.dll
