@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TriNet.TestApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e372b0f8254933c9120b91060c0312287423df94")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dbb3261da71926b3e2160986b8596d620286225")]
 [assembly: System.Reflection.AssemblyProductAttribute("TriNet.TestApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TriNet.TestApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

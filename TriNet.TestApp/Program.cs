@@ -1,8 +1,5 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Dynamic;
 using TriNet.TestApp.Otp;
-using System.Dynamic;
-using System.Collections.Generic;
 
 namespace TriNet.TestApp
 {
@@ -10,14 +7,27 @@ namespace TriNet.TestApp
     {
         public static async Task Main(string[] args)
         {
-            dynamic payload = new System.Dynamic.ExpandoObject();
-            dynamic info = new System.Dynamic.ExpandoObject();
+
+            var message = await new SendOtp().AddPayload(FormPayload()).Get();
+            Console.WriteLine(message);
+        }
+
+        private static ExpandoObject FormPayload()
+        {
+            dynamic payload = new ExpandoObject();
+            dynamic info = new ExpandoObject();
             info.ip = "172.34.09.00";
             payload.mobile = "9876543210";
             payload.channel = "sms";
-            payload.info= info;
-            var message = await new SendOtp().AddPayload(payload).Get();
-            Console.WriteLine(message);
+            payload.info = info;
+            return payload;
+        }
+
+        private static ExpandoObject FormHeaders()
+        {
+            dynamic header = new ExpandoObject();
+            header.UserAgent = "Me";
+            return header;
         }
     }
 }

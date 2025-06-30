@@ -1,13 +1,24 @@
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Dynamic;
-using System.Text;
-using System.Text.Json;
 
 namespace TriNet.TestApp.Http
 {
     public abstract class HttpCall : TriNetBase
     {
+        public HttpCall()
+        {
+            FormPayload();
+        }
+
+        private void FormPayload()
+        {
+            if (DefaultPayload != null)
+            {
+                _payload = _payload != null
+                    ? MergeExpandos(DefaultPayload, _payload)
+                    : DefaultPayload;
+            }
+        }
+
         public string FormFullUrl()
         {
             if (!string.IsNullOrWhiteSpace(ApiPath))
@@ -23,45 +34,45 @@ namespace TriNet.TestApp.Http
             throw new InvalidOperationException("Api path is missing!");
         }
 
-                public HttpCall AddPayload(dynamic payload)
+        public HttpCall AddPayload(ExpandoObject payload)
         {
             if (payload == null) return this;
 
-            var targetDict = (IDictionary<string, object>)_payload;
-
-            foreach (var prop in (IDictionary<string, object>)payload)
-            {
-                targetDict[prop.Key] = prop.Value;
-            }
+            _payload = payload;
 
             return this;
         }
 
-        // Merges default + user-provided
-        private IDictionary<string, object> GetMergedPayload()
+        private ExpandoObject MergeExpandos(ExpandoObject first, ExpandoObject second)
         {
-            var merged = new ExpandoObject() as IDictionary<string, object>;
+            var result = new ExpandoObject();
+            var dictResult = (IDictionary<string, object>)result;
 
-            foreach (var pair in (IDictionary<string, object>)DefaultPayload)
-                merged[pair.Key] = pair.Value;
+            foreach (var kv in (IDictionary<string, object>)first)
+                dictResult[kv.Key] = kv.Value;
 
-            foreach (var pair in (IDictionary<string, object>)_payload)
-                merged[pair.Key] = pair.Value;
+            foreach (var kv in (IDictionary<string, object>)second)
+                dictResult[kv.Key] = kv.Value;
 
-            return merged;
+            return result;
         }
 
 
-        public HttpCall AddHeader(Dictionary<string, object> headers = null)
+        public HttpCall AddHeader(ExpandoObject headers)
         {
-            _headers = headers;
+            if (headers == null) return this;
+
+            _headers = DefaultHeaders != null
+                ? MergeExpandos(DefaultHeaders, headers)
+                : headers;
+
             return this;
         }
 
         public async Task<string> Get()
         {
             var FullUrl = FormFullUrl();
-            Dd(GetMergedPayload());
+            Dd(_payload, _headers);
             return FullUrl;
         }
     }
